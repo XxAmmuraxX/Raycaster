@@ -5,7 +5,6 @@ struct strip {
 	Vector2 pos;
 	float width, height, brightness;
 	void Update(float height, float brightness) { this->height = height; this->brightness = brightness; }
-	//void Draw() {DrawRectangle() }
 };
 
 class Scene3D : public Scene
@@ -16,7 +15,7 @@ class Scene3D : public Scene
 	std::vector<float> ratios;
 	std::vector<Texture2D> textures;
 	float rec_width;
-	bool is_fullscreen = false;
+	bool is_fullscreen = true;
 public:
 	Scene3D(Vector2 pos, float width, float height,Entity& entity);
 	void ToggleFullsceen();

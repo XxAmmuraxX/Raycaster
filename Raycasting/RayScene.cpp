@@ -5,17 +5,15 @@
 RayScene::RayScene(Vector2 pos, float width, float height) :
 	Scene(pos,width,height)
 {
-	//walls.push_back(Wall({ 100,100 }, { 200,200 }));
+
+	//walls around map
 	walls.push_back(Wall({ 0,0 }, { width,0 },GRAY));
 	walls.push_back(Wall({ 0,height }, { width,height }, GRAY));
 	walls.push_back(Wall({ 0,0 }, { 0,height }, GRAY));
 	walls.push_back(Wall({ width,0 }, { width,height }, GRAY));
-	//walls.push_back(Wall({ 100,300 }, { 300,100 }));
-	//walls.push_back(Wall({ 200,300 }, { 400,300 }));
+
 	GenRandMap(0.5,0.5);
 	GenBoxes(wooden_box_texture);
-	//AddTexture();
-	//GenRandWalls(1);
 }
 
 void RayScene::Update()
@@ -31,6 +29,9 @@ void RayScene::Draw()
 		wall.Draw();
 
 	entity.Draw();
+
+	const char* txt = "Press F11 for fullscreen 3D";
+	DrawText(txt, width/2 - MeasureText(txt, 30)/2, 50, 30, DARKGREEN.transparent(140));
 }
 
 void RayScene::GenRandMap(float density,float spaciness)

@@ -19,7 +19,7 @@ float Ray2D::GetDistance()
 void Ray2D::Draw()
 {
     if (hits.size())
-        DrawLine(pos.x, pos.y, closest_hit.pos.x, closest_hit.pos.y, closest_hit.color);
+        DrawLine(pos.x, pos.y, closest_hit.pos.x, closest_hit.pos.y, RED);
 }
 
 bool Ray2D::FindClosestHit()
